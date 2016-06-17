@@ -47,36 +47,34 @@ sftp:
     command: ftpuser:123456:1001
 
 shadowsocks-server:
-  build: ./shadowsocks
-  ports:
-    - "8388:8388/tcp"
-    - "8388:8388/udp"
-  environment:
-    - PASSWORD=5ouMnqPyzseL
-  restart: always
+    build: ./shadowsocks
+    ports:
+      - "8388:8388/tcp"
+      - "8388:8388/udp"
+    environment:
+      - PASSWORD=5ouMnqPyzseL
+    restart: always
 
 shadowsocks-client:
-  build: ./shadowsocks
-  command: >
-  #SERVER_ADDR
-    ss-local -s 1.2.3.4
-             -p 8388
-             -m aes-256-cfb
-             -k 5ouMnqPyzseL
-             -b 0.0.0.0
-             -l 1080
-             -t 300
-             --fast-open
-  ports:
-    - "1080:1080"
-  restart: always
+    build: ./shadowsocks
+    command: >
+      ss-local -s 1.2.3.4
+      -p 8388
+      -m aes-256-cfb
+      -k 5ouMnqPyzseL
+      -b 0.0.0.0
+      -l 1080
+      -t 300
+      --fast-open
+    ports:
+      - "1080:1080"
+    restart: always
 
 shadowsocks-client-arm:
-  build: ./shadowsocks/arm
-  ports:
-    - "1080:1080"
-  environment:
-    #SERVER_ADDR
-    - SERVER_ADDR=1.2.3.4
-    - PASSWORD=5ouMnqPyzseL
-  restart: always
+    build: ./shadowsocks/arm
+    ports:
+      - "1080:1080"
+    environment:
+      - SERVER_ADDR=1.2.3.4
+      - PASSWORD=5ouMnqPyzseL
+    restart: always
