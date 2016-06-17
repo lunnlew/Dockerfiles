@@ -8,4 +8,4 @@ FROM atmoz/sftp
 #RUN chown ftpuser:ftpuser /home/ftpuser
 #RUN chown -R ftpuser.ftpuser /home/ftpuser/opt
 
-RUN chmod 755 /home/ftpuser
+#RUN chmod 755 /home/ftpuser

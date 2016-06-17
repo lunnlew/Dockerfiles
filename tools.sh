@@ -30,4 +30,4 @@ mkdir ~/opt ~/opt/data ~/opt/data/mysql ~/opt/data/elasticsearch ~/opt/log ~/opt
 
 scp ~/Desktop/Dockerfiles.tar.gz core@104.236.162.252:/home/core
 
-cd ~ && tar -zxvf Dockerfiles.tar.gz && cd Dockerfiles && ../docker-compose up
+cd ~ && tar -zxvf Dockerfiles.tar.gz && cd Dockerfiles && ../docker-compose up --build
